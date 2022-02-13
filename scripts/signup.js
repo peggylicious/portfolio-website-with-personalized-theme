@@ -4,7 +4,7 @@ let myform = document.querySelector("#signupForm");
 let myLoginForm = document.querySelector("#loginForm");
 let btn = document.querySelector("#signup-submit-btn");
 let loginBtn = document.querySelector("#login-submit-btn");
-let loginData = new FormData(myLoginForm);
+// let loginData = new FormData(myLoginForm);
 
 // let username = document.getElementById("name-1").value;
 // let useremail = document.getElementById("email-1").value;
@@ -61,4 +61,4 @@ async function authenticate1(datas) {
     return response
 }
 
-loginBtn.addEventListener("click", getDetails(loginData))
+// loginBtn.addEventListener("click", getDetails(loginData))
