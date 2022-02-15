@@ -1,20 +1,20 @@
 let myLoginForm = document.querySelector("#loginForm");
 let loginBtn = document.querySelector("#login-submit-btn");
 
-function getDetails(datas) {
-  authenticate1(datas)
+function login(datas) {
+  loginUser(datas)
     .then((response) => response.json())
     .then((data) => {
-        localStorage.setItem("token", data.token)
+      localStorage.setItem("token", data.token);
       console.log(data);
-      document.location.href = "/"
+      document.location.href = "/";
     })
     .catch((err) => {
       console.log(err);
     });
 }
 
-async function authenticate1(datas) {
+async function loginUser(datas) {
   console.log("Data, ", datas);
   let response = await fetch("http://localhost:3000/user/login", {
     method: "POST",
@@ -32,7 +32,7 @@ loginBtn.addEventListener("click", (e) => {
     email: document.getElementById("login-email").value,
     password: document.getElementById("login-password").value,
   };
-  getDetails(loginData);
+  login(loginData);
 });
 
 // function loadTheme(){
